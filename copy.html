@@ -14,12 +14,12 @@
         function random(a) {
             return Math.floor(Math.random() * (a + 1));
         }
-
+        //Creates random opponent selection for rock, paper, or scissors//
         function computerPlay() {
             let picked = random(2)
             return (picked === 0) ? "Rock" : (picked === 1) ? "Paper" : "Scissors";
         }
-
+        //Tells various outcomes of rock paper scissors match//
         function playRound(playerSelection, computerSelection) {
             if (playerSelection === computerSelection) {
                 console.log("Draw!");
@@ -43,7 +43,7 @@
                 return playerScore++
             }
         }
-
+        //Plays 5 rounds of rock paper scissors, and showing results of match.//
         function playGame() {
             for (i = 0; i <= 5; i++) {
                 const playerSelection = prompt("Rock, Paper, Scissors!");
