@@ -55,7 +55,9 @@
                 playRound();
             }
             console.log(playerScore);
-            (playerScore > computerScore) ? console.log("You win!"): (playerScore < computerScore) ? console.log("You lose!") : console.log("Tie!")
+            (playerScore > computerScore) ? console.log("You win! " + playerScore + " to " + computerScore):
+                (playerScore < computerScore) ? console.log("You lose! " + playerScore + " to " + computerScore) :
+                console.log("Tie!")
 
         }
         playGame();
