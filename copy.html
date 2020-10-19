@@ -22,9 +22,10 @@
 
 
         //Tells various outcomes of rock paper scissors match and plays single round.//
-        function playRound(playerSelection, computerSelection) {
+        function playRound() {
 
-            let question = prompt("Rock, Paper, Scissors!").toLowerCase();
+            let question = prompt("Rock, Paper, Scissors!");
+            playerSelection = question.toLowerCase();
             computerSelection = computerPlay();
 
             if (question === computerSelection) {
