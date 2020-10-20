@@ -7,62 +7,19 @@
 </head>
 
 <body>
-    <script>
-        let playerScore = 0;
-        let computerScore = 0;
+    <div>
+        <button id="btn">
+            Rock
+        </button>
+        <button id="btn">
+            Paper
+        </button>
+        <button id="btn">
+            Scissors
+        </button>
+    </div>
 
-        function random(a) {
-            return Math.floor(Math.random() * (a + 1));
-        }
-        //Creates random opponent selection for rock, paper, or scissors//
-        function computerPlay() {
-            let picked = random(2)
-            return (picked === 0) ? "rock" : (picked === 1) ? "paper" : "scissors";
-        }
-
-
-        //Tells various outcomes of rock paper scissors match and plays single round.//
-        function playRound() {
-
-            let question = prompt("Rock, Paper, Scissors!");
-            playerSelection = question.toLowerCase();
-            computerSelection = computerPlay();
-
-            if (question === computerSelection) {
-                return "Draw!";
-            } else if (question === "rock" && computerSelection === "paper") {
-                computerScore += 1;
-                return "You lose! Paper covers rock!";
-            } else if (question === "rock" && computerSelection === "scissors") {
-                playerScore += 1;
-                return "You win! Rock crushes scissors!";
-            } else if (question === "paper" && computerSelection === "scissors") {
-                computerScore += 1;
-                return "You lose! Scissors cuts paper!";
-            } else if (question === "paper" && computerSelection === "rock") {
-                playerScore += 1;
-                return "You win! Paper covers rock!";
-            } else if (question === "scissors" && computerSelection === "rock") {
-                computerScore += 1;
-                return "You lose! Rock covers paper!";
-            } else if (question === "scissors" && computerSelection === "paper") {
-                playerScore += 1;
-                return "You win! Scissors cuts paper!";
-            }
-        }
-        //Loops 5 rounds of rock paper scissors, and showing results of match.//
-        function playGame() {
-            for (i = 1; i <= 5; i++) {
-                playRound();
-            }
-            console.log(playerScore);
-            (playerScore > computerScore) ? console.log("You win! " + playerScore + " to " + computerScore):
-                (playerScore < computerScore) ? console.log("You lose! " + playerScore + " to " + computerScore) :
-                console.log("Tie!")
-
-        }
-        playGame();
-    </script>
 </body>
+<script src="dom.js"></script>
 
 </html>
