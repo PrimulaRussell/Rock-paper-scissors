@@ -3,14 +3,17 @@ let computerScore = 0;
 
 //Create a selection for each button//
 
-const pickRock = document.querySelectorAll('#btn')[0];
-pickRock.addEventListener('click', (playRound("rock", computerPlay)));
+document.getElementById('rock').onclick = function() {
+    playRound("rock", computerPlay);
+}
 
-const pickPaper = document.querySelectorAll('#btn')[1];
-pickPaper.addEventListener('click', (playRound("paper", computerPlay)));
+document.getElementById('paper').onclick = function() {
+    playRound("paper", computerPlay);
+}
 
-const pickScissors = document.querySelectorAll('#btn')[2];
-pickScissors.addEventListener('click', (playRound("scissors", computerPlay)));
+document.getElementById('scissors').onclick = function() {
+    playRound("scissors", computerPlay);
+}
 
 // Random selection for computer//
 function random(a) {
@@ -21,7 +24,6 @@ function computerPlay() {
     let picked = random(2);
     return (picked === 0) ? "rock" : (picked === 1) ? "paper" : "scissors";
 }
-
 
 //Tells various outcomes of rock paper scissors match and plays single round.//
 function playRound(playerSelection, computerSelection) {
@@ -47,4 +49,5 @@ function playRound(playerSelection, computerSelection) {
         playerScore += 1;
         return "You win! Scissors cuts paper!";
     }
+
 }
