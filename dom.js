@@ -15,6 +15,23 @@ document.getElementById('scissors').onclick = function() {
     playRound("scissors", computerPlay());
 }
 
+//Results box//
+
+let results = document.querySelector('#results')
+let scoreBoard = document.querySelector('#scoreBoard')
+
+
+//Running Score//
+function runningScore() {
+    if (playerScore < 5 && computerScore < 5) {
+        scoreBoard.textContent = "Player Score: " + playerScore + " Computer Score: " + computerScore
+    } else if (playerScore > 5 && computerScore < 5) {
+        scoreBoard.textContent = "You win!"
+    } else if (playerScore < 5 && computerScore > 5) {
+        scoreBoard.textContent = "You lose!"
+    }
+}
+
 // Random selection for computer//
 function random(a) {
     return Math.floor(Math.random() * (a + 1));
@@ -29,25 +46,25 @@ function computerPlay() {
 function playRound(playerSelection, computerSelection) {
 
     if (playerSelection === computerSelection) {
-        console.log("Draw!");
+        results.textContent = "Draw!";
     } else if (playerSelection === "rock" && computerSelection === "paper") {
         computerScore += 1;
-        console.log("You lose! Paper covers rock!");
+        results.textContent = "You lose! Paper covers rock!";
     } else if (playerSelection === "rock" && computerSelection === "scissors") {
         playerScore += 1;
-        console.log("You win! Rock crushes scissors!");
+        results.textContent = "You win! Rock crushes scissors!";
     } else if (playerSelection === "paper" && computerSelection === "scissors") {
         computerScore += 1;
-        console.log("You lose! Scissors cuts paper!");
+        results.textContent = "You lose! Scissors cuts paper!";
     } else if (playerSelection === "paper" && computerSelection === "rock") {
         playerScore += 1;
-        console.log("You win! Paper covers rock!");
+        results.textContent = "You win! Paper covers rock!";
     } else if (playerSelection === "scissors" && computerSelection === "rock") {
         computerScore += 1;
-        console.log("You lose! Rock crushes scissors!");
+        results.textContent = "You lose! Rock crushes scissors!";
     } else if (playerSelection === "scissors" && computerSelection === "paper") {
         playerScore += 1;
-        console.log("You win! Scissors cuts paper!");
+        results.textContent = "You win! Scissors cuts paper!";
     }
-
+    runningScore();
 }
