@@ -25,9 +25,9 @@ let scoreBoard = document.querySelector('#scoreBoard')
 function runningScore() {
     if (playerScore < 5 && computerScore < 5) {
         scoreBoard.textContent = "Player Score: " + playerScore + " Computer Score: " + computerScore
-    } else if (playerScore > 5 && computerScore < 5) {
+    } else if (playerScore >= 5 && computerScore < 5) {
         scoreBoard.textContent = "You win!"
-    } else if (playerScore < 5 && computerScore > 5) {
+    } else if (playerScore < 5 && computerScore >= 5) {
         scoreBoard.textContent = "You lose!"
     }
 }
